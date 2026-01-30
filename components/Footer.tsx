@@ -1,9 +1,18 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Footer: React.FC = () => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
+
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/services' },
+    { name: 'About', href: '/about' },
+    { name: 'Testimonials', href: '/testimonials' },
+    { name: 'Contact', href: '/contact' },
+  ];
 
   const socialLinks = [
     { name: 'Facebook', icon: '📘' },
@@ -12,7 +21,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer ref={ref} className="bg-[#1a1a2e] py-12 px-6 text-white/60 relative overflow-hidden">
+    <footer ref={ref} className="bg-[#1a1a2e] py-16 px-6 text-white/60 relative overflow-hidden">
       {/* Decorative wave */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
         <svg className="relative block w-full h-8" preserveAspectRatio="none" viewBox="0 0 1200 120">
@@ -33,36 +42,83 @@ const Footer: React.FC = () => {
         </svg>
       </div>
 
-      <div className={`max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 relative pt-8 transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-        <div className={`text-center md:text-left transition-all duration-500 delay-100 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
-          <div className="font-serif text-2xl font-bold text-white mb-2 group cursor-pointer flex items-center gap-2">
-            <span className="w-8 h-8 bg-[#E91E63] rounded-lg flex items-center justify-center text-sm">S</span>
-            <span className="inline-block transition-transform duration-300 group-hover:rotate-3">Shakthi</span>
+      <div className={`max-w-7xl mx-auto pt-8 transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          {/* Brand */}
+          <div className="md:col-span-1">
+            <Link to="/" className="flex items-center gap-2 font-serif text-2xl font-bold text-white mb-4">
+              <span className="w-8 h-8 bg-[#E91E63] rounded-lg flex items-center justify-center text-sm">S</span>
+              <span>Shakthi</span>
+            </Link>
+            <p className="text-sm leading-relaxed">Empowering women through specialized, compassionate physiotherapy care.</p>
           </div>
-          <p className="text-sm">Empowering women through specialized, compassionate care.</p>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              {navLinks.map(link => (
+                <li key={link.name}>
+                  <Link to={link.href} className="hover:text-[#E91E63] transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">Our Services</h4>
+            <ul className="space-y-2">
+              <li><Link to="/services" className="hover:text-[#E91E63] transition-colors">Prenatal Care</Link></li>
+              <li><Link to="/services" className="hover:text-[#E91E63] transition-colors">Postpartum Recovery</Link></li>
+              <li><Link to="/services" className="hover:text-[#E91E63] transition-colors">Pelvic Floor Therapy</Link></li>
+              <li><Link to="/services" className="hover:text-[#E91E63] transition-colors">Women's Wellness</Link></li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">Contact Us</h4>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-start gap-2">
+                <span>📍</span>
+                <span>123 Health Street, Wellness Plaza, Chennai 600001</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span>📞</span>
+                <span>+91 63835 96139</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span>✉️</span>
+                <span>info@shakthiphysio.com</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div className={`flex gap-6 transition-all duration-500 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'}`}>
-          {socialLinks.map((link, index) => (
-            <a
-              key={link.name}
-              href="#"
-              className="group flex items-center gap-2 hover:text-white transition-all duration-300"
-              style={{ transitionDelay: `${400 + index * 100}ms` }}
-            >
-              <span className="text-xl transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12">
-                {link.icon}
-              </span>
-              <span className="hidden sm:inline group-hover:text-[#E91E63]">{link.name}</span>
-            </a>
-          ))}
-        </div>
-
-        <div className={`text-sm transition-all duration-500 delay-500 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
-          <p className="hover:text-white transition-colors duration-300">
-            &copy; {new Date().getFullYear()} Shakthi Women's Physiotherapy.
+        {/* Bottom Bar */}
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm">
+            &copy; {new Date().getFullYear()} Shakthi Women's Physiotherapy. All rights reserved.
           </p>
-          <p className="text-xs mt-1 text-white/40">Made with <span className="text-[#E91E63]">💗</span> for women's health</p>
+
+          <div className="flex gap-4">
+            {socialLinks.map((link) => (
+              <a
+                key={link.name}
+                href="#"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#E91E63] transition-all"
+                aria-label={link.name}
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
+
+          <p className="text-xs text-white/40">Made with <span className="text-[#E91E63]">💗</span> for women's health</p>
         </div>
       </div>
     </footer>

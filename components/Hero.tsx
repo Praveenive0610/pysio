@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useScrollAnimation, useParallax } from '../hooks/useScrollAnimation';
 
 const Hero: React.FC = () => {
@@ -32,18 +33,18 @@ const Hero: React.FC = () => {
             At Shakthi Women's Physiotherapy, we provide compassionate, evidence-based care tailored to every stage of a woman's life — from pregnancy to menopause and beyond.
           </p>
           <div className={`flex flex-wrap gap-4 mb-10 transition-all duration-700 delay-1000 ${heroVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="btn-animated bg-[#E91E63] text-white px-8 py-4 rounded-full font-semibold shadow-xl hover:bg-[#C2185B] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#E91E63]/30 flex items-center gap-2"
             >
               Book Your Appointment <span>→</span>
-            </a>
-            <a
-              href="#services"
+            </Link>
+            <Link
+              to="/services"
               className="btn-animated border-2 border-[#1a1a2e] text-[#1a1a2e] px-8 py-4 rounded-full font-semibold hover:bg-[#1a1a2e] hover:text-white transition-all duration-300 hover:-translate-y-1"
             >
               Explore Our Services
-            </a>
+            </Link>
           </div>
 
           {/* Stats row */}
