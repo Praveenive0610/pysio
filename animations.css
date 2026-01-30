@@ -1,0 +1,493 @@
+/* ===== SCROLL-TRIGGERED ANIMATIONS ===== */
+
+/* Fade In Up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Down */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Left */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade In Right */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale In */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Rotate In */
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+/* Text Reveal with Clip */
+@keyframes textReveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Slide Up Reveal */
+@keyframes slideUpReveal {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ===== DECORATIVE ANIMATIONS ===== */
+
+/* Floating animation */
+@keyframes floatEnhanced {
+
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(10px, -20px) rotate(2deg);
+  }
+
+  50% {
+    transform: translate(-5px, -10px) rotate(-1deg);
+  }
+
+  75% {
+    transform: translate(15px, -25px) rotate(1deg);
+  }
+}
+
+/* Morphing Blob */
+@keyframes morphBlob {
+
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+
+  50% {
+    border-radius: 50% 60% 30% 70% / 70% 40% 70% 30%;
+  }
+
+  75% {
+    border-radius: 60% 40% 70% 30% / 30% 70% 40% 60%;
+  }
+}
+
+/* Pulse Glow */
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(233, 30, 99, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(233, 30, 99, 0.6);
+  }
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Gradient Flow */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Bounce Soft */
+@keyframes bounceSoft {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Ripple Effect */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Icon Spin */
+@keyframes iconSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Wave Animation */
+@keyframes wave {
+
+  0%,
+  100% {
+    d: path("M0,96L48,112C96,128,192,160,288,154.7C384,149,480,107,576,101.3C672,96,768,128,864,133.3C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z");
+  }
+
+  50% {
+    d: path("M0,128L48,138.7C96,149,192,171,288,165.3C384,160,480,128,576,128C672,128,768,160,864,165.3C960,171,1056,149,1152,144C1248,139,1344,149,1392,154.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z");
+  }
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-rotateIn {
+  animation: rotateIn 0.6s ease-out forwards;
+}
+
+.animate-textReveal {
+  animation: textReveal 1s ease-out forwards;
+}
+
+.animate-floatEnhanced {
+  animation: floatEnhanced 6s ease-in-out infinite;
+}
+
+.animate-morphBlob {
+  animation: morphBlob 8s ease-in-out infinite;
+}
+
+.animate-pulseGlow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-gradientFlow {
+  background-size: 200% 200%;
+  animation: gradientFlow 3s ease infinite;
+}
+
+.animate-bounceSoft {
+  animation: bounceSoft 2s ease-in-out infinite;
+}
+
+/* ===== SCROLL ANIMATION STATES ===== */
+
+.scroll-hidden {
+  opacity: 0;
+}
+
+.scroll-visible {
+  opacity: 1;
+}
+
+/* ===== HOVER EFFECTS ===== */
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(233, 30, 99, 0.15);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(233, 30, 99, 0.4);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* 3D Tilt Effect */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.tilt-card:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
+}
+
+/* ===== FORM ANIMATIONS ===== */
+
+.input-focus-animation {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.input-focus-animation:focus {
+  border-color: #E91E63;
+  box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Floating Label */
+.floating-label {
+  transition: all 0.3s ease;
+}
+
+.floating-label.active {
+  transform: translateY(-24px) scale(0.85);
+  color: #E91E63;
+}
+
+/* ===== BUTTON ANIMATIONS ===== */
+
+.btn-animated {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-animated::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-animated:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* ===== PROGRESS BAR ===== */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #E91E63, #F48FB1, #E91E63);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
+
+/* ===== STAGGER DELAYS ===== */
+
+.stagger-1 {
+  animation-delay: 0ms;
+}
+
+.stagger-2 {
+  animation-delay: 100ms;
+}
+
+.stagger-3 {
+  animation-delay: 200ms;
+}
+
+.stagger-4 {
+  animation-delay: 300ms;
+}
+
+.stagger-5 {
+  animation-delay: 400ms;
+}
+
+.stagger-6 {
+  animation-delay: 500ms;
+}
+
+/* ===== PARALLAX ===== */
+
+.parallax-slow {
+  will-change: transform;
+}
+
+/* ===== TYPEWRITER EFFECT ===== */
+
+.typewriter {
+  overflow: hidden;
+  border-right: 3px solid #d4a574;
+  white-space: nowrap;
+  animation: typing 3s steps(40, end), blinkCaret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkCaret {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: #E91E63;
+  }
+}
+
+/* ===== GRADIENT TEXT ===== */
+
+.gradient-text {
+  background: linear-gradient(135deg, #E91E63, #F48FB1, #E91E63);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientFlow 3s ease infinite;
+}
+
+/* ===== SMOOTH SCROLL ===== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== REDUCE MOTION ===== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

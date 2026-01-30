@@ -1,0 +1,27 @@
+
+import React, { useState, useEffect } from 'react';
+
+const ScrollProgress: React.FC = () => {
+    const [progress, setProgress] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            setProgress(scrollPercent);
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    return (
+        <div
+            className="scroll-progress"
+            style={{ width: `${progress}%` }}
+        />
+    );
+};
+
+export default ScrollProgress;

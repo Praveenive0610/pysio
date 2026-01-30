@@ -1,0 +1,7 @@
+{
+  "name": "Shakthi Women's Physiotherapy",
+  "description": "A premium, specialized physiotherapy web application focused on women's health and wellness, featuring expert prenatal, postpartum, and pelvic floor care.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
